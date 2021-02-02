@@ -44,20 +44,32 @@ Route::group(['as'=>'users.', 'prefix'=>'users'], function (){
 
 });
 
-//Week 2 Assignment PART 1
-Route::get('/aboutme', function () {
+//Week 2 Assignment
 
-    $name = array("fullName" => "Jesse Viau");
-    return view('pages.about', $name);
+//PART 1
+
+//compact method
+Route::get('/aboutme', function () {
+    $fName = "Jesse";
+    $lName = "Viau";
+    return view('pages.about', compact("fName", "lName"));
 
 })->name('aboutme.fullname');
 
 
-
+//Implicit Array method
 Route::get('/thingsiknow', function (){
-    $items = array("JavaScript", "Java", "PHP", "C#");
+    $items = ["JavaScript", "Java", "PHP", "C#"];
     return view('pages.langs')->with('items', $items);
 
 })->name('thingsiknow.lang');
+
+
+//PART 2
+
+Route::get('/contact', function (){
+    $email = ["email" => "jesse.viau92@stclairconnect.ca"];
+    return view('pages.contact', $email);
+})->name('contact.email');
 
 

@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    </head>
+    <title>Contact</title>
+</head>
 
-    <body>
+<body>
+@extends('master')
 
-        <h2>About Me: <?php echo "$fName $lName" ?></h2>
-
-    </body>
+</body>
 
 </html>
-
-
