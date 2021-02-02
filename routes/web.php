@@ -44,4 +44,20 @@ Route::group(['as'=>'users.', 'prefix'=>'users'], function (){
 
 });
 
+//Week 2 Assignment PART 1
+Route::get('/aboutme', function () {
+
+    $name = array("fullName" => "Jesse Viau");
+    return view('pages.about', $name);
+
+})->name('aboutme.fullname');
+
+
+
+Route::get('/thingsiknow', function (){
+    $items = array("JavaScript", "Java", "PHP", "C#");
+    return view('pages.langs')->with('items', $items);
+
+})->name('thingsiknow.lang');
+
 
