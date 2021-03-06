@@ -73,3 +73,31 @@ Route::get('/contact', function (){
 })->name('contact.email');
 
 
+
+// Week 3
+
+//Route::get("/articles", "ArticleController@index")->name("articles.index");
+//
+//Route::get('/articles/{article}', 'ArticleController@show')->name('articles.show');
+
+// Week 4
+//    Route::get('/categories', 'CategoryController@index')->name('categories.index');
+//    Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
+
+// Week 5
+
+Route::group(['prefix'=>'categories'], function(){
+    Route::get('/', 'CategoryController@index')->name('categories.index');
+    Route::get('/create', 'CategoryController@create')->name('categories.create');
+    Route::post('categories', 'CategoryController@store')->name('categories.store');
+    Route::get('/{category}', 'CategoryController@show')->name('categories.show');
+});
+
+Route::group(['prefix'=>'articles'], function(){
+    Route::get("/", "ArticleController@index")->name("articles.index");
+    Route::get('/create', 'ArticleController@create')->name('articles.create');
+    Route::post('articles', 'ArticleController@store')->name('articles.store');
+    Route::get('/{article}', 'ArticleController@show')->name('articles.show');
+});
+
+
